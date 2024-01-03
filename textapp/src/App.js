@@ -1,16 +1,16 @@
 import './App.css';
-// import About from './component/About';
+import About from './component/About';
 import Navbar from './component/Navbar';
 import TeextForm from './component/TeextForm';
 import Alert from './component/Alert';
 import { useState } from 'react';
 
-// import React from "react";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route
-// } from "react-router-dom";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 
 
@@ -49,20 +49,20 @@ function App() {
   }
   return (
     <>
-      /
+      <Router>
         <Navbar mode={mode} toggleMode={toggleDark} />
         <Alert alert={alert} />
         <div className="container">
-          {/* <Switch>
+          <Switch>
             <Route path="/about">
-              <About />
-            </Route> */}
-            {/* <Route path="/"> */}
+              <About mode={mode} />
+            </Route>
+            <Route path="/">
               <TeextForm heading="Enter Something in textArea" mode={mode} />
-            {/* </Route>
-          </Switch> */}
+            </Route>
+          </Switch>
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
